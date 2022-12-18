@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import './App.css';
-import { FaArrowDown } from 'react-icons/fa';
+import styled from "styled-components";
+import "./App.css";
+import { FaArrowDown } from "react-icons/fa";
 
 function App() {
   return (
@@ -8,49 +8,80 @@ function App() {
       <HeaderContainer>
         <HeaderSubCont1>
           <LogoCont>
-            <div id='logo-name'>Naukri</div>
+            <div id="logo-name">Naukri</div>
             <span>
-              <img src='' alt=''></img>
+              <img src="" alt=""></img>
             </span>
           </LogoCont>
-          <HeaderSubDiv className='header-sub-div'>
-            <a href=''>Find Jobs</a>
+          <HeaderSubDiv className="header-sub-div">
+            <a href="">Find Jobs</a>
           </HeaderSubDiv>
-          <HeaderSubDiv className='header-sub-div'>
-            <a href=''>Company Reviews</a>
+          <HeaderSubDiv className="header-sub-div">
+            <a href="">Company Reviews</a>
           </HeaderSubDiv>
         </HeaderSubCont1>
         <HeaderSubCont2>
-          <HeaderSubDiv className='header-sub-div'>
-            <a href=''>Submit your CV</a>
+          <HeaderSubDiv className="header-sub-div">
+            <a href="">Submit your CV</a>
           </HeaderSubDiv>
-          <HeaderSubDiv className='header-sub-div'>
-            <a href=''>Sign In</a>
+          <HeaderSubDiv className="header-sub-div">
+            <a href="">Sign In</a>
           </HeaderSubDiv>
           <HeaderSubDiv>|</HeaderSubDiv>
-          <HeaderSubDiv className='header-sub-div'>
-            <a href=''>Employer/Post Job</a>
+          <HeaderSubDiv className="header-sub-div">
+            <a href="">Employer/Post Job</a>
           </HeaderSubDiv>
+          {/* <div>
+            <HeaderList>
+              <li>Find Jobs</li>
+              <li>Company Reviews</li>
+              <li>Submit your CV</li>
+              <li>Sign in</li>
+              <li>Employer/Post job</li>
+            </HeaderList>
+          </div> */}
         </HeaderSubCont2>
       </HeaderContainer>
       <BodyDiv>
         <div>
-          <LandingImg src='./assets/office-image.jpg' alt=''></LandingImg>
+          <LandingImg src="./assets/office-image.jpg" alt=""></LandingImg>
         </div>
-        <MotoDiv id='body-div'>
-          <p>Hire or get hired...</p>
-        </MotoDiv>
-        <Input>
-          <div>
-            <input type='text' />
+        <BodySubDiv id="body-sub-div">
+          <MotoDiv>
+            <p>Hire or get hired...</p>
+          </MotoDiv>
+          <div className="input-div">
+            <div>
+              <input
+                className="input-field input"
+                type="text"
+                placeholder="Job title,keywords or company"
+              />
+            </div>
+            <div>
+              <input
+                className="input-field input"
+                type="text"
+                placeholder="City,province or region"
+              />
+            </div>
+            <div>
+              <FindButton id="find-button">
+                <b>Find Jobs</b>
+              </FindButton>
+            </div>
           </div>
-          <div>
-            <input type='text' />
+          <div id="option">
+            <p>
+              <b><Option href="">Post your CV</Option></b> - It only takes a few
+              seconds
+            </p>
+            <p>
+              <b><Option href="">Employers-Post a job</Option></b> - Your next hire
+              might be here
+            </p>
           </div>
-          <div>
-            <button>Find Jobs</button>
-          </div>
-        </Input>
+        </BodySubDiv>
       </BodyDiv>
     </div>
   );
@@ -98,23 +129,31 @@ const BodyDiv = styled.div`
   position: relative;
 `;
 
-const MotoDiv = styled.div`
+const BodySubDiv = styled.div`
   position: absolute;
-  top: 8%;
-  left: 37%;
-  font-size: 50px;
-  border: 1px solid black;
-  border-radius: 25px;
-  padding: 5px;
+  top: 20%;
+  left: 20%;
 `;
 
-const Input = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 37%;
-  border: 1px solid black;
-  margin: 10px;
+const MotoDiv = styled.div`
+  font-size: 50px;
+  color: white;
+  border-radius: 25px;
+  padding: 5px;
+  text-align: center;
 `;
+
+const FindButton = styled.button`
+  color: white;
+  background-color: blue;
+  padding: 7px 12px 8px;
+  width: 100px;
+  border-radius: 10px;
+  border-color: blue;
+  font-size: 15px;
+`;
+
+const Option = styled.a`
+  color: blue;
+`;
+
