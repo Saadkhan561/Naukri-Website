@@ -1,0 +1,22 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo-name {
+    font-size: 40px;
+}
+
+.header-sub-div > a {
+    text-decoration: none;
+    color: black;
+}
+
+#body-div {
+    font-family: 'Oswald', sans-serif;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#body-div:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition-duration: 200ms;
+}
