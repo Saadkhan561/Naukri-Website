@@ -3,3 +3,19 @@
     margin: 0;
     padding: 0;
 }
+
+#job-new {
+    color: rgb(187, 67, 67);
+}
+
+#job-property {
+    background-color: #f0eded;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.cross-button {
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}

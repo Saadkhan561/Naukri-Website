@@ -85,19 +85,18 @@ function App() {
             <JobSubDiv>
               <div>
                 {' '}
-                <p>new</p>
-                <h4>Job Title</h4>
+                <p id='job-new'>new</p>
+                <h3>Job Title</h3>
                 <p>Company Name</p>
                 <p>Company Location</p>
               </div>
               <div>
-                <button></button>
+                <button className='cross-button'><img src="./assets/cross.png" alt="" height={40} width={40}/></button>
               </div>
             </JobSubDiv>
-            <p>Job Type</p>
             <JobProperty>
-              <div>Job Property 1</div>
-              <div>Job Property 2</div>
+              <div id='job-property'>Job Property 1</div>
+              <div id='job-property'>Job Property 2</div>
             </JobProperty>
             <ul>
               <li>
@@ -270,6 +269,19 @@ const BodySubDiv = styled.div`
   position: absolute;
   top: 20%;
   left: 20%;
+
+  @media (max-width: 400px) {
+    top: 4%;
+  }
+
+  @media (min-width: 400px) and (max-width: 600px) {
+    top: 7%;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    top: 15%
+  }
+
   @media (min-width: 900px) and (max-width: 1100px) {
     left: 17%;
   }
@@ -293,16 +305,21 @@ const InputDiv = styled.div`
 
   @media (max-width: 400px) {
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 0px;
   }
 
   @media (min-width: 400px) and (max-width: 600px) {
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 0px;
   }
   @media (min-width: 600px) and (max-width: 900px) {
     flex-direction: column;
     text-align: center;
+    margin-top: 10px;
+  }
+
+  @media (min-width: 900px) {
+    margin-top: 50px;
   }
 `;
 
@@ -431,7 +448,7 @@ const JobHeadingDiv = styled.div`
 const JobHeadingSubDiv = styled.div`
   padding: 40px;
   &:hover {
-    border-bottom: 2px solid blue;
+    border-bottom: 3px solid blue;
   }
 `;
 
@@ -454,9 +471,11 @@ const RecentJobDiv = styled.div`
 
 const JobSubDiv = styled.div`
   display: grid;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 90% auto;
 `;
 const JobProperty = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
 `;
