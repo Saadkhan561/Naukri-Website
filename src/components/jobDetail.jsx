@@ -8,7 +8,10 @@ const JobDetail = () => {
     <div id='job-detail'>
       <BackButtonDiv>
         <div>
-          <img src='./assets/back arrow.png'></img>
+          <img
+            src='./assets/back arrow.png'
+            onClick={() => navigate('/jobs')}
+          ></img>
         </div>
         <div id='go-back'>Go Back To Job Searching</div>
       </BackButtonDiv>
@@ -199,16 +202,6 @@ const JobDetailDiv = styled.div`
   border: 1px solid grey;
   width: 80%;
   padding: 10px;
-  border-radius: 20px;
-  // @media (min-width: 900px) and (max-width: 1020px) {
-  //   width: 400px;
-  // }
-  // @media (min-width: 750px) and (max-width: 900px) {
-  //   width: 350px;
-  // }
-  // @media (min-width: 500px) and (max-width: 750px) {
-  //   width: 300px;
-  // }
 `;
 
 const JobAttributes = styled.div`

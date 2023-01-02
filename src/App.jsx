@@ -5,6 +5,9 @@ import Jobs from './components/Jobs.jsx';
 import JobDetail from './components/jobDetail.jsx';
 import JobApplication from './components/jobApplication.jsx';
 import Submitted from './components/submitted.jsx';
+import PostCV from './components/postCV.jsx';
+import PostJob from './components/postJob.jsx';
+import ConfirmAccount from './components/confirmAccount.jsx';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path='jobdetails' element={<JobDetail />} />
           <Route path='jobapply' element={<JobApplication />} />
           <Route path='submitted' element={<Submitted />} />
+          <Route path='postCV' element={<PostCV />} />
+          <Route path='postJob' element={<PostJob />} />{' '}
+          <Route path='confirmAccount' element={<ConfirmAccount />} />{' '}
         </Route>
       </Routes>
     </BrowserRouter>

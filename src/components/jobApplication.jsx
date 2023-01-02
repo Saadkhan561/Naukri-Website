@@ -10,22 +10,22 @@ const JobApplication = () => {
         <div>
           <h3>Add your contact information</h3>
         </div>
-        <InputDiv>
+        <div>
           <Label>First Name</Label>
           <Input name='fname' type='text' />
-        </InputDiv>
-        <InputDiv>
+        </div>
+        <div>
           <Label>Last Name</Label>
           <Input name='lname' type='text' />
-        </InputDiv>
-        <InputDiv>
+        </div>
+        <div>
           <Label>City, State (Optional)</Label>
           <Input name='city' type='text' />
-        </InputDiv>
-        <InputDiv>
+        </div>
+        <div>
           <Label>Phone Number (Optional)</Label>
           <Input name='ph_no' type='number' />
-        </InputDiv>
+        </div>
         <LabelResume for='upload'>
           <UploadImg src='./assets/upload.png'></UploadImg>
           <b>Upload your Resume</b>
@@ -56,8 +56,6 @@ const BasicInfoDiv = styled.form`
   border-radius: 8px;
   border-bottonm: 1px solid grey;
 `;
-
-const InputDiv = styled.div``;
 
 const Input = styled.input`
   width: 100%;

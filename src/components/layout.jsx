@@ -1,8 +1,50 @@
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import './layout.css';
 
 function Layout() {
+  const [userStatus, setUserStatus] = useState(false);
+  const navigate = useNavigate();
+
+  function NotSignedIn() {
+    return (
+      <HeaderSubCont2>
+        <HeaderSubDiv className='header-sub-div'>
+          <HeaderSubDivLink href='' onClick={() => navigate('/postCV')}>
+            Submit your CV
+          </HeaderSubDivLink>
+        </HeaderSubDiv>
+        <HeaderSubDiv className='header-sub-div'>
+          <HeaderSubDivLink href='' onClick={() => navigate('/confirmAccount')}>
+            Sign In
+          </HeaderSubDivLink>
+        </HeaderSubDiv>
+        <HeaderSubDiv className='header-sub-div'>
+          <HeaderSubDivLink href='' onClick={() => navigate('/postJob')}>
+            Employer/Post Job
+          </HeaderSubDivLink>
+        </HeaderSubDiv>
+      </HeaderSubCont2>
+    );
+  }
+
+  function SignedIn() {
+    return (
+      <HeaderSubCont2>
+        <HeaderSubDiv className='header-sub-div'>
+          <HeaderSubDivLink className='header-sub-div'>
+            <ProfileImg src='./assets/account.png'></ProfileImg>
+          </HeaderSubDivLink>
+        </HeaderSubDiv>
+        <HeaderSubDiv className='header-sub-div'>
+          <HeaderSubDivLink href='' onClick={() => navigate('/postCV')}>
+            Submit your CV
+          </HeaderSubDivLink>
+        </HeaderSubDiv>
+      </HeaderSubCont2>
+    );
+  }
   return (
     <div>
       <HeaderContainer>
@@ -14,23 +56,15 @@ function Layout() {
             </span>
           </LogoCont>
           <HeaderSubDiv className='header-sub-div'>
-            <HeaderSubDivLink href=''>Find Jobs</HeaderSubDivLink>
+            <HeaderSubDivLink href='' onClick={() => navigate('/jobs')}>
+              Find Jobs
+            </HeaderSubDivLink>
           </HeaderSubDiv>
           <HeaderSubDiv className='header-sub-div'>
             <HeaderSubDivLink href=''>Company Reviews</HeaderSubDivLink>
           </HeaderSubDiv>
         </HeaderSubCont1>
-        <HeaderSubCont2>
-          <HeaderSubDiv className='header-sub-div'>
-            <HeaderSubDivLink href=''>Submit your CV</HeaderSubDivLink>
-          </HeaderSubDiv>
-          <HeaderSubDiv className='header-sub-div'>
-            <HeaderSubDivLink href=''>Sign In</HeaderSubDivLink>
-          </HeaderSubDiv>
-          <HeaderSubDiv className='header-sub-div'>
-            <HeaderSubDivLink href=''>Employer/Post Job</HeaderSubDivLink>
-          </HeaderSubDiv>
-        </HeaderSubCont2>
+        {userStatus ? SignedIn() : NotSignedIn()}
       </HeaderContainer>
       <Main>
         <Outlet />
@@ -143,9 +177,18 @@ const HeaderSubDiv = styled.div`
   }
 `;
 
+const HeaderConditionalDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 const HeaderSubDivLink = styled.a`
   text-decoration: none;
   color: black;
+`;
+
+const ProfileImg = styled.img`
+  height: 25px;
 `;
 
 const Main = styled.div`
@@ -161,7 +204,6 @@ const FooterDiv = styled.div`
   justify-content: center;
   background-color: #f0eded;
   margin-top: auto;
-  overflow-y: hidden;
   width: 100%;
 `;
 

@@ -33,13 +33,17 @@ const Home = () => {
           <OptionDiv>
             <Option>
               <b>
-                <OptionLink href=''>Post your CV</OptionLink>
+                <OptionLink href='' onClick={() => navigate('/postCV')}>
+                  Post your CV
+                </OptionLink>
               </b>{' '}
               - It only takes a few seconds
             </Option>
             <Option>
               <b>
-                <OptionLink href=''>Employers-Post a job</OptionLink>
+                <OptionLink href='' onClick={() => navigate('/postJob')}>
+                  Employers-Post a job
+                </OptionLink>
               </b>{' '}
               - Your next hire might be here
             </Option>
