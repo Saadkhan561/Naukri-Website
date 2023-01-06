@@ -128,7 +128,7 @@ const Label = styled.label`
   margin-bottom: 5px;
 `;
 const Input = styled.input`
-  width: 95%;
+  width: 60%;
   height: 24px;
   font-size: 15px;
   padding: 3px;
@@ -182,7 +182,7 @@ const LabelResume = styled.label`
   border-radius: 0.3rem;
   cursor: pointer;
   margin-top: 1rem;
-  width: 90%;
+  width: 60%;
 `;
 
 const UploadImg = styled.img`

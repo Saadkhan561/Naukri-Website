@@ -16,8 +16,12 @@ function Layout() {
           </HeaderSubDivLink>
         </HeaderSubDiv>
         <HeaderSubDiv className='header-sub-div'>
-          <HeaderSubDivLink href='' onClick={() => navigate('/confirmAccount')}>
+          <HeaderSubDivLink href='' onClick={() => navigate('/signUp')}>
             Sign In
+          </HeaderSubDivLink>
+          <div>/</div>
+          <HeaderSubDivLink href='' onClick={() => navigate('/logIn')}>
+            Log In
           </HeaderSubDivLink>
         </HeaderSubDiv>
         <HeaderSubDiv className='header-sub-div'>
@@ -45,6 +49,7 @@ function Layout() {
       </HeaderSubCont2>
     );
   }
+
   return (
     <div>
       <HeaderContainer>
@@ -169,6 +174,8 @@ const LogoName = styled.div`
 `;
 
 const HeaderSubDiv = styled.div`
+  display: flex;
+  flex-direction: row;
   padding: 40px 12px 20px;
   &: hover {
     background-color: #e0dddd;
@@ -177,14 +184,12 @@ const HeaderSubDiv = styled.div`
   }
 `;
 
-const HeaderConditionalDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 const HeaderSubDivLink = styled.a`
   text-decoration: none;
   color: black;
+  &:hover {
+    border-bottom: grey 1px solid;
+  }
 `;
 
 const ProfileImg = styled.img`

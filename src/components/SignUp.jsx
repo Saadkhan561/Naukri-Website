@@ -2,32 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const ConfirmAccount = () => {
+const SignUp = () => {
+  const [userStatus, setUserStatus] = useState(false);
   const navigate = useNavigate();
 
-  return (
-    <Main>
-      <OptionDiv>
-        <OptionSubDiv>
-        <Employee>
-          As an employee
-        </Employee>
-        <Employer>
-          As an employer
-        </Employer>
-        </OptionSubDiv>
-      </OptionDiv>
-     {/* {renderDiv()} */}
-      {/* <DetailsDiv>
-        <Details>
-        <div>
-        <h1>Provide Details...</h1>
+  function employee() {
+    return (
+      <DetailsDiv>
+        <EmployeeDetails>
+          <div>
+            <h1>Provide Details...</h1>
           </div>
           <div>
-          <Label>
-          <b>First Name</b>
-          </Label>
-          <Input type='text' name='fname' />
+            <Label>
+              <b>First Name</b>
+            </Label>
+            <Input type='text' name='fname' />
           </div>
           <div>
             <Label>
@@ -66,10 +56,15 @@ const ConfirmAccount = () => {
             <Input type='text' name='city' />
           </div>
           <SubmitButton onClick={() => navigate('/')}>Submit</SubmitButton>
-        </Details>
+        </EmployeeDetails>
       </DetailsDiv>
+    );
+  }
+
+  function employer() {
+    return (
       <DetailsDiv>
-        <Details>
+        <EmployerDetails>
           <div>
             <h1>Provide Details...</h1>
           </div>
@@ -110,13 +105,29 @@ const ConfirmAccount = () => {
             <Input type='text' name='city' />
           </div>
           <SubmitButton onClick={() => navigate('/')}>Submit</SubmitButton>
-        </Details>
-      </DetailsDiv> */}
+        </EmployerDetails>
+      </DetailsDiv>
+    );
+  }
+
+  return (
+    <Main>
+      <OptionDiv>
+        <OptionSubDiv>
+          <Employee onClick={() => setUserStatus(true)}>
+            As an employee
+          </Employee>
+          <Employer onClick={() => setUserStatus(false)}>
+            As an employer
+          </Employer>
+        </OptionSubDiv>
+      </OptionDiv>
+      {userStatus ? employee() : employer()}
     </Main>
   );
 };
 
-export default ConfirmAccount;
+export default SignUp;
 
 // STYLED CSS
 const Main = styled.div``;
@@ -130,7 +141,7 @@ const OptionSubDiv = styled.div`
   display: grid;
   grid-template-columns: 320px 320px;
   column-gap: 100px;
-`
+`;
 
 const Employee = styled.div`
   margin-top: 30px;
@@ -138,32 +149,48 @@ const Employee = styled.div`
   border: 1px solid grey;
   border-radius: 10px;
   font-size: 20px;
+  cursor: pointer;
   &:hover {
     background-color: #e0dddd;
     transition: 400ms;
   }
-`
+`;
 const Employer = styled.div`
-border: 1px solid grey;
-padding: 30px 80px 30px;
-margin-top: 30px;
-border-radius: 10px;
-font-size: 20px;
-&:hover {
-  background-color: #e0dddd;
-  transition: 400ms;
-}
-`
+  border: 1px solid grey;
+  padding: 30px 80px 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #e0dddd;
+    transition: 400ms;
+  }
+`;
 
 const DetailsDiv = styled.div`
   display: flex;
   justify-content: center;
 `;
-const Details = styled.form`
+
+const EmployeeDetails = styled.form`
   display: grid;
-  grid-template-rows: 'repeat(8, 70px) 50px;';
+  grid-template-rows: repeat(7, 70px) 70px;
   width: 45%;
   margin-top: 40px;
+  padding: 60px;
+  border: 1px solid grey;
+  border-radius: 20px;
+`;
+
+const EmployerDetails = styled.form`
+  display: grid;
+  grid-template-rows: repeat(8, 70px) 50px;
+  width: 45%;
+  margin-top: 40px;
+  padding: 60px;
+  border: 1px solid grey;
+  border-radius: 20px;
 `;
 
 const Label = styled.label`
@@ -191,7 +218,8 @@ const SubmitButton = styled.button`
   background-color: blue;
   border-radius: 10px;
   border: none;
-  width: 200px;
+  width: 180px;
+  height: 50px;
   cursor: pointer;
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
