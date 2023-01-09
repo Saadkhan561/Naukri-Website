@@ -1,0 +1,60 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Manager",
+      "cmpname": "Younus Textile",
+      "cmplocation": "Karachi",
+      "postdate": "12-Dec-2023",
+      "jobType": "Full Time",
+      "jobDesc": "asdaiaihsdiasbdasasddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "skillReq": [{ "name": "JS" }, { "name": "Python" }],
+      "salRange": {
+        "minSalary": 50000,
+        "maxSalary": 100000
+      }
+    },
+    {
+      "id": 2,
+      "title": "Assistant Manager",
+      "cmpname": "Younus Textile",
+      "cmplocation": "Karachi",
+      "postdate": "12-Dec-2023",
+      "jobType": "Part Time",
+      "jobDesc": "asdaiaihsdiasbdasasddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "skillReq": [{ "name": "HTML" }, { "name": "CSS" }],
+      "salRange": {
+        "minSalary": 40000,
+        "maxSalary": 60000
+      }
+    },
+    {
+      "id": 3,
+      "title": "Developer",
+      "cmpname": "Younus Textile",
+      "cmplocation": "Karachi",
+      "postdate": "12-Dec-2023",
+      "jobType": "Full Time",
+      "jobDesc": "asdaiaihsdiasbdasasddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "skillReq": [{ "name": "Block Chain" }, { "name": "Python" }],
+      "salRange": {
+        "minSalary": 50000,
+        "maxSalary": 70000
+      }
+    },
+    {
+      "id": 4,
+      "title": "Backend Developer",
+      "cmpname": "Younus Textile",
+      "cmplocation": "Karachi",
+      "postdate": "12-Dec-2023",
+      "jobType": "Full Time",
+      "jobDesc": "asdaiaihsdiasbdasasddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "skillReq": [{ "name": "Node JS" }, { "name": "Express JS" }],
+      "salRange": {
+        "minSalary": 40000,
+        "maxSalary": 80000
+      }
+    }
+  ]
+}
